@@ -11,9 +11,9 @@ function checkNumber($number) {
     if ($number > 0) {
         return "The number is positive. <br>";
     } elseif ($number < 0) {
-        return "The number is negative.";
+        return "The number is negative. <br>";
     } else {
-        return "The number is zero.";
+        return "The number is zero. <br>";
     }
 }
 
