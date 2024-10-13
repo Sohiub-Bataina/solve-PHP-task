@@ -13,10 +13,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if ($user && password_verify($password, $user['password'])) {
         $_SESSION['user'] = $user;
-        header("Location: dashboard.php"); // Redirect to the dashboard after login
+        header("Location: dashboard.php"); 
+        if ($user['position'] === 'admin') {
+            header("Location: admin_dashboard.php"); 
+        } else {
+            header("Location: dashboard.php"); 
+        }
         exit();
     } else {
-        $error = "Incorrect email or password!"; // Error message for incorrect credentials
+        $error = "Incorrect email or password!"; 
     }
 }
 ?>
